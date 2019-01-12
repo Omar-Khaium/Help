@@ -1,5 +1,5 @@
 # Help 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![](https://jitpack.io/v/Omar-Khaium/Help.svg)](https://jitpack.io/#Omar-Khaium/Help) ![](https://img.shields.io/github/downloads/Omar-Khaium/Help/total.svg) 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![](https://jitpack.io/v/Omar-Khaium/Help.svg)](https://jitpack.io/#Omar-Khaium/Help) ![](https://img.shields.io/github/downloads/Omar-Khaium/Help/total.svg) [![GitHub version](https://badge.fury.io/gh/Naereen%2FStrapDown.js.svg)](https://github.com/Omar-Khaium/Help)
 
 # Step 1. Add the JitPack repository to your build file
 Add it in your root build.gradle at the end of repositories:
