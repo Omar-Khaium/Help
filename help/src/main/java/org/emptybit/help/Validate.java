@@ -1,8 +1,73 @@
 package org.emptybit.help;
 
+import android.widget.EditText;
+
 public class Validate {
-    public static String Check(String value) {
-        if (value.equals("") || value.equals("null") || value == null) return "-";
-        else return value;
+
+    public static boolean Input(EditText text) {
+        return !text.getText().toString().isEmpty();
+    }
+
+    public static String Phone(String number) {
+        String formatText = "";
+        if (number.equals("")) {
+            return "";
+        } else if (number.contains("-")) {
+            number = number.replace("-", "");
+        }
+
+        boolean hasCountryCode = false;
+        if (number.startsWith("1")) {
+            formatText = "1";
+            number = number.substring(1, number.length());
+            hasCountryCode = true;
+        } else if (number.startsWith("+1")) {
+            formatText = "+1";
+            number = number.substring(2, number.length());
+            hasCountryCode = true;
+        } else if (number.startsWith("001")) {
+            formatText = "001";
+            number = number.substring(3, number.length());
+            hasCountryCode = true;
+        }
+
+        for (int i = 0; i < 3; i++) {
+            if (!number.equals("")) {
+                String chunk = "";
+                if (i == 2) {
+                    chunk = number;
+                    number = "";
+                } else {
+                    if (number.length() >= 3) {
+                        chunk = number.substring(0, 3);
+                        number = number.substring(3, number.length());
+                    } else {
+                        chunk = number;
+                        number = "";
+                    }
+
+                }
+                if (i == 0) {
+                    if (hasCountryCode) {
+                        formatText += "-" + chunk;
+                    } else {
+                        formatText += chunk;
+                    }
+                } else {
+                    formatText += "-" + chunk;
+                }
+            } else {
+                return formatText;
+            }
+        }
+        return formatText;
+    }
+
+    public static String ReversePhone(String number) {
+        if (number.contains("-")) {
+            return number.replace("-", "");
+        } else {
+            return number;
+        }
     }
 }
