@@ -32,5 +32,5 @@ Name | Behaviour
 Name | Behaviour
 ------------ | -------------
 `Validate.Input(EditText name)` | will return true or false after valiation
-`Validate.Phone(Strin number)` | will return phone number in US  format
+`Validate.Phone(String number)` | will return phone number in US  format
 `Validate.ReversePhone(String number)` | will remove phone number US  format and return as plain text
