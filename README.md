@@ -25,7 +25,7 @@ Following attributes is added to resolve manual validation and formating values.
 Name | Behaviour
 ------------ | -------------
 `Format.Text(String text)` | will return text value in String format after checking. Default result : "-"
-`Format.Name(String firstName, String secondName)` | will return name by checking first name and second name Default result : "-"
+`Format.Name(String firstName, String secondName)` | will return name by checking first name and second name. Default result : "-"
 `Format.Address(String address, String city, String state, String zip)` | will return address's value. Default result : "-"
 
 # Validate
