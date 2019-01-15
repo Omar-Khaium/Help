@@ -1,5 +1,8 @@
 package org.emptybit.help;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 public class Format {
     public static String Text(String value) {
         if (value.equals("") || value.equals("null") || value == null) return "-";
@@ -84,5 +87,25 @@ public class Format {
             }
         }
         return finalAddress;
+    }
+
+    public static String Date(String date) {
+        SimpleDateFormat fromUser = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        try {
+            return dateFormat.format(fromUser.parse(date));
+        } catch (ParseException e) {
+            return "-";
+        }
+    }
+
+    public static String Date(String date, String format) {
+        SimpleDateFormat fromUser = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        SimpleDateFormat dateFormat = new SimpleDateFormat(format);
+        try {
+            return dateFormat.format(fromUser.parse(date));
+        } catch (ParseException e) {
+            return "-";
+        }
     }
 }
