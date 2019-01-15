@@ -14,7 +14,7 @@ public class Format {
         else {
             if (limit > 20) {
                 if (value.length() > limit) {
-                    return value.substring(0, value.indexOf("")) + "..." + value.substring(value.lastIndexOf(" "),limit);
+                    return value.substring(0, value.indexOf(" ")) + "..." + value.substring(value.lastIndexOf(" "),limit);
                 } else return value;
             } else return value;
 
