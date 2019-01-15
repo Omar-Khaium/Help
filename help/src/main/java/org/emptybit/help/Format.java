@@ -12,10 +12,10 @@ public class Format {
     public static String Text(String value, int limit) {
         if (value.equals("") || value.equals("null") || value == null) return "-";
         else {
-            if (limit > 20) {
-                if (value.length() > limit) {
-                    return value.substring(0, value.indexOf(" ")) + "..." + value.substring(value.lastIndexOf(" "),limit);
-                } else return value;
+            if (value.length() > limit) {
+                String firstWord = value.substring(0, limit);
+                String lastWord = value.substring(value.lastIndexOf(" "), value.length());
+                return firstWord.substring(0, firstWord.length()-lastWord.length()) + "..." + lastWord;
             } else return value;
 
         }
