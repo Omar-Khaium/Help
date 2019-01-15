@@ -9,6 +9,18 @@ public class Format {
         else return value;
     }
 
+    public static String Text(String value, int limit) {
+        if (value.equals("") || value.equals("null") || value == null) return "-";
+        else {
+            if (limit > 20) {
+                if (value.length() > limit) {
+                    return value.substring(0, value.indexOf("")) + "..." + value.substring(value.lastIndexOf(" "),limit);
+                } else return value;
+            } else return value;
+
+        }
+    }
+
     public static String Name(String firstName, String secondName) {
         if (firstName.equals("") || firstName.equals("null") || firstName == null) {
             if (secondName.equals("") || secondName.equals("null") || secondName == null)
