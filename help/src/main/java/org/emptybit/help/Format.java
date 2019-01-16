@@ -13,9 +13,7 @@ public class Format {
         if (value.equals("") || value.equals("null") || value == null) return "-";
         else {
             if (value.length() > limit) {
-                String firstWord = value.substring(0, limit);
-                String lastWord = value.substring(value.lastIndexOf(" "), value.length());
-                return firstWord.substring(0, firstWord.length()-lastWord.length()) + "..." + lastWord;
+                return value.substring(0, limit) + "....";
             } else return value;
 
         }
