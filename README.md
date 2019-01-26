@@ -15,7 +15,7 @@ allprojects {
 # Step 2. Add the dependency
 ```gradle
 dependencies {
-    implementation 'com.github.Omar-Khaium:Help:1.2.5'
+    implementation 'com.github.Omar-Khaium:Help:1.2.6'
 }
 ```
 
