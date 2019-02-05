@@ -1,11 +1,16 @@
 package org.emptybit.help;
 
 import android.widget.EditText;
+import android.widget.Spinner;
 
 public class Validate {
 
     public static boolean Input(EditText text) {
         return !text.getText().toString().isEmpty();
+    }
+
+    public static boolean Spinner(Spinner spinner) {
+        return spinner.getSelectedItemPosition() != 0;
     }
 
     public static String Phone(String number) {
@@ -19,15 +24,15 @@ public class Validate {
         boolean hasCountryCode = false;
         if (number.startsWith("1")) {
             formatText = "1";
-            number = number.substring(1, number.length());
+            number = number.substring(1);
             hasCountryCode = true;
         } else if (number.startsWith("+1")) {
             formatText = "+1";
-            number = number.substring(2, number.length());
+            number = number.substring(2);
             hasCountryCode = true;
         } else if (number.startsWith("001")) {
             formatText = "001";
-            number = number.substring(3, number.length());
+            number = number.substring(3);
             hasCountryCode = true;
         }
 
@@ -40,7 +45,7 @@ public class Validate {
                 } else {
                     if (number.length() >= 3) {
                         chunk = number.substring(0, 3);
-                        number = number.substring(3, number.length());
+                        number = number.substring(3);
                     } else {
                         chunk = number;
                         number = "";
