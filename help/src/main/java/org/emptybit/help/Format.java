@@ -5,7 +5,8 @@ import java.text.SimpleDateFormat;
 
 public class Format {
     public static String Text(String value) {
-        if (value.equals("") || value.equals("null") || value == null) return "-";
+        if (value == null) return "-";
+        else if (value.isEmpty()) return "-";
         else return value;
     }
 
