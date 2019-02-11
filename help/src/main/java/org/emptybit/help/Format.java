@@ -6,12 +6,13 @@ import java.text.SimpleDateFormat;
 public class Format {
     public static String Text(String value) {
         if (value == null) return "-";
-        else if (value.isEmpty()) return "-";
+        else if (value.isEmpty() || value.equals("null")) return "-";
         else return value;
     }
 
     public static String Text(String value, int limit) {
-        if (value.equals("") || value.equals("null") || value == null) return "-";
+        if (value == null) return "-";
+        else if (value.isEmpty() || value.equals("null")) return "-";
         else {
             if (value.length() > limit) {
                 return value.substring(0, limit) + "....";
