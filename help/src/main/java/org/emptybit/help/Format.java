@@ -102,11 +102,7 @@ public class Format {
     }
 
     public static String AddressForMap(String address) {
-        String mapAddress = "";
-        mapAddress = address.replace(' ','+');
-        mapAddress = address.replace('\n',',');
-        mapAddress = address.replace('\r',' ');
-        return mapAddress;
+        return address.replace(" ","+").replace("\n",",").replace("\r"," ");
     }
 
     public static String Date(String date) {
