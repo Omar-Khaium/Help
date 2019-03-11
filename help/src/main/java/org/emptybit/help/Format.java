@@ -101,6 +101,14 @@ public class Format {
         return finalAddress;
     }
 
+    public static String AddressForMap(String address) {
+        String mapAddress = "";
+        mapAddress = address.replace(' ','+');
+        mapAddress = address.replace('\n',',');
+        mapAddress = address.replace('\r',' ');
+        return mapAddress;
+    }
+
     public static String Date(String date) {
         SimpleDateFormat fromUser = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
