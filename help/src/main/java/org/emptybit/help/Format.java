@@ -124,4 +124,14 @@ public class Format {
             return "-";
         }
     }
+
+    public static String FileDate(String date) {
+        SimpleDateFormat fromUser = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, h:mm a '\n' MM/dd/yyyy");
+        try {
+            return dateFormat.format(fromUser.parse(date));
+        } catch (ParseException e) {
+            return "-";
+        }
+    }
 }
