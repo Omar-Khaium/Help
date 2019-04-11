@@ -1,7 +1,10 @@
 package org.emptybit.help;
 
+import android.content.Context;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Format {
     public static String Text(String value) {
@@ -125,12 +128,21 @@ public class Format {
         }
     }
 
-    public static String FileDate(String date) {
-        SimpleDateFormat fromUser = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-        SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, h:mm a '\n' MM/dd/yyyy");
+    public static String FileDate(String dateOfBirth, Context context) {
+//        SimpleDateFormat fromUser = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, h:mm a '\n' MM/dd/yyyy");
         try {
-            return dateFormat.format(fromUser.parse(date));
-        } catch (ParseException e) {
+            SimpleDateFormat sdf = new SimpleDateFormat("EEE, h:mm a '\n' MM/dd/yyyy");
+            Date date = null;
+            try {
+                date = sdf.parse(dateOfBirth);
+            } catch (ParseException e) {
+                // handle exception here !
+            }
+            java.text.DateFormat dateFormat = android.text.format.DateFormat.getDateFormat(context);
+            return dateFormat.format(date);
+
+        } catch (Exception e) {
             return "-";
         }
     }
